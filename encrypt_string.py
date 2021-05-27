@@ -2,14 +2,14 @@ import random
 from alphabet_list import alpha_list
 
 
-def encrypting_string(string_to_encode: str) -> (str, int):
+def encrypting_string(string_to_encode: str) -> dict:
     """
     Converts the entered sentence to a `caesar cipher`.
     Consider the string "ABED", assuming the key to be '1',
     the caesar cipher created will be "BCFE".
 
     :param string_to_encode: The string to be converted to `caesar cipher`.
-    :return: A tuple containing the encrypted string and the key used to encrypt the original string.
+    :return: A key, value pair containing the encrypted string and the key used to encrypt the original string.
     """
     key = random.randint(1, 5)
     encrypted_string = ""
