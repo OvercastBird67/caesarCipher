@@ -3,6 +3,26 @@ import random
 
 
 class CaesarCipher:
+    """
+    Class to represent the encryption and decryption of a string using `Caesar Cipher`
+    Consider the string `ABeD`, assuming the key to be `1`, the caesar cipher created will be `BCFE`.
+    Inversely if the entered string is `BCfE` and key is specified to be `1` then the result will be `ABeD`
+
+    The key is auto-generated during run-time and is `not to be provided` while calling the `encrypt_string` method.
+
+    However while calling the `decrypt_string` method the key is to be `explicitly provided by the user`, otherwise the
+    value will default to `1`.
+
+    Attributes:
+        string (str): The string passed, which is to be encrypted/decrypted
+        len_string (int): Length of the string to be encrypted/decrypted
+        alpha_list (list): A list containing all the alphabets in lowercase
+        len_alpha_list (int): Length of the alpha_list
+
+    Methods:
+        encrypt_string: Treats the entered string as `plain text` and converts it `cipher text`
+        decrypt_string: Treats the entered string as `cipher text` and converts it to `plain text`
+    """
 
     def __init__(self, string: str) -> None:
         """
@@ -40,11 +60,12 @@ class CaesarCipher:
 
         return key, encrypted_string
 
-    def decrypt_string(self, key: int) -> str:
+    def decrypt_string(self, key: int = 1) -> str:
         """
         Decrypts the provided string from a caesar `cipher back` to `plain text`
 
-        :param key: An integer value used to encrypt the text
+        :param key: An integer value used to decrypt the text
+                    If not provided, will default to `1`
         :return: A string, which contains the plain text for the received caesar cipher
         """
         decrypted_string = ""
